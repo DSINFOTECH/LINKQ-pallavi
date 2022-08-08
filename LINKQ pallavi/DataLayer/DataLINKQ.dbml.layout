@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataLINKQ">
+  <DataContextMoniker Name="/DataLINKQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b2f29c25-e734-47ba-b84c-7b3b9a44dd48" absoluteBounds="4, 1.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataLINKQDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="050f6253-8699-46b3-9d7b-3783e7fff3b5" absoluteBounds="4.015, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b98711e-460d-4c1b-b649-94dc6aec257c" absoluteBounds="1, 0.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataLINKQDataContext/Dept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d868f8e3-7562-4b86-8710-173d1107e131" absoluteBounds="1.0150000000000001, 1.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 2.58255126953125); (3 : 2.58255126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataLINKQDataContext/Company/Company_Dept" />
+      <nodes>
+        <classShapeMoniker Id="b2f29c25-e734-47ba-b84c-7b3b9a44dd48" />
+        <classShapeMoniker Id="2b98711e-460d-4c1b-b649-94dc6aec257c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

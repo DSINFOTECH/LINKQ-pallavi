@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="pallavistocksystem" Class="DataLINKQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SUC1VNM\SQLEXPRESS;Initial Catalog=pallavistocksystem;Integrated Security=True" SettingsObjectName="LINKQ_pallavi.Properties.Settings" SettingsPropertyName="pallavistocksystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Com_code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Com_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Com_Add" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Com_Contact" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Created_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Updated_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Updated_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Company_Dept" Member="Depts" ThisKey="Com_ID" OtherKey="Com_ID" Type="Dept" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dept" Member="Depts">
+    <Type Name="Dept">
+      <Column Name="Dept_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dept_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dept_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Statuss" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Created_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Updated_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Updated_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Company_Dept" Member="Company" ThisKey="Com_ID" OtherKey="Com_ID" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Company_searchAlldata" Method="Company_searchAlldata">
+    <Parameter Name="SearchData" Parameter="searchData" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Company_searchAlldataResult">
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Company Name]" Member="Company_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Company Addres]" Member="Company_Addres" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[Company Contact]" Member="Company_Contact" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[Created ID]" Member="Created_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Create Date]" Member="Create_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Updated id ]" Member="Updated_id_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Updated Date]" Member="Updated_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
